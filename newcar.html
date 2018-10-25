@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href="./css/newcar.css" type="text/css" rel="stylesheet"/>
+  <title>购物车</title>
+</head>
+<body>
+<div id="app">
+  <div class="tag">
+    <span v-for="(item,index) in headsel_value" :key="index" @click="headsel(index)">{{item}}</span>
+  </div>
+  <!--<div class="tagText"></div>-->
+
+
+  <div class="head">
+    <div style="width: 4%;">
+      <input type="checkbox" id="checkA" @click="selAll($event.currentTarget)" v-model="allSelect"/>
+      <label for="checkA"></label>
+    </div>
+    <p style="width: 13%;">全选</p>
+  </div>
+  <div class="center">
+    <div class="shopname" v-for="(item,index) in list" :key="index">
+      <div style="width: 4%;">
+        <input type="checkbox" :id="'check'+index" name="checkboxs"  @click="selshop(item)" v-model="item.sel" />
+        <label :for="'check'+index"></label>
+      </div>
+      <p>{{item.shopname}}</p>
+      <ul>
+        <li class="goodsli" v-for="(goods,idx) in item.goods" :key="idx">
+          <div style="width: 4%;">
+            <input type="checkbox" :id=`${item.id}+${idx}` @click="selgoods(goods,index)"  v-model="goods.sel" name="checkgoods" />
+            <label :for=`${item.id}+${idx}` ></label>
+          </div>
+          <P style="width:29%">{{goods.goodsname}}</P>
+          <P>{{goods.price}}</P>
+          <div class="adddel">
+            <em>-</em>
+            <input type="number" :value="goods.count"/>
+            <em>+</em>
+          </div>
+          <div class="specification">
+            <span>规格:</span>
+            <div style="display: inline-block">
+              <div class="btn_spacifi">
+                <span v-for="(Specione,idxOne) in goods.Specifi.one" :key="idxOne">{{Specione.value}}</span>
+              </div>
+              <div class="btn_spacifi">
+                <span v-for="(Specitwo,idxTwo) in goods.Specifi.two" :key="idxTwo">{{Specitwo.value}}</span>
+              </div>
+
+            </div>
+          </div>
+          <P>删除</P>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="./js/vue.js"></script>
+<script src="./js/cart.js"></script>
+<script>
+  (function () {
+
+
+  })();
+</script>
+</html>

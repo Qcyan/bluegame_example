@@ -8,7 +8,6 @@
 <body>
 <div id="app" class="product_b" style="padding:0;background: #fff;">
   <table id="goods_table" class="shoplist margincenter">
-    <tr class="trnone"></tr>
     <tr class="toptr">
       <td width="40">
         <input type="checkbox" id="checkA" /><label for="checkA"></label>
@@ -20,7 +19,6 @@
       <td width="100">小计</td>
       <td width="100">操作</td>
     </tr>
-    <tr class="trnone"></tr>
     <tr>
       <td>
         <input type="checkbox"  name="checkboxs" />
@@ -56,19 +54,10 @@
 </div>
 </body>
 <script src="./js/vue.js"></script>
-
+<script src="./js/cart.js"></script>
 <script>
   (function () {
-    _require.config = ({
-      path: "./js/cart.js"
-    })
 
-    _require.use(function () {
-
-      app = _require('family-package')({
-        el: "#app",
-      });
-    });
 
   })();
 </script>

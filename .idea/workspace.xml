@@ -2,92 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c600f799-2063-4912-ae48-44b7dfba175e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.babelrc" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/blue-game-engine.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/build/base.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/build.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/config.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/dev.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/library.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/util.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/config.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/static/js/blue-game-engine.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/static/js/blue-game-engine.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/static/js/blue-game-engine.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dist/static/js/blue-game-engine.min.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/.babelrc" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/.editorconfig" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/.eslintignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/.eslintrc.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/.gitignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/.postcssrc.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/build/build.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/build/check-versions.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/build/logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/build/utils.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/build/vue-loader.conf.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/build/webpack.base.conf.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/build/webpack.dev.conf.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/build/webpack.prod.conf.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/config/dev.env.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/config/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/config/prod.env.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/package-lock.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/src/App.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/src/assets/logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/src/components/HelloWorld.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/src/main.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/src/router/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gametest/static/.gitkeep" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/modules.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/src.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/workspace.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/base/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine/map/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine/map/methods.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine/npc/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine/npc/methods.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine/res/consumable/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine/res/consumable/methods.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine/res/equipment/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine/res/equipment/methods.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine/res/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine/res/methods.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine/res/strengthen/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine/res/strengthen/methods.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine/role/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine/role/methods.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine/role/monster/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine/role/monster/methods.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine/skill/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine/skill/methods.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine/task/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/engine/task/methods.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/instance/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/instance/init.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/instance/methods.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/storage/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/core/webpack-hot.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/util/dom.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/util/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cart.html" afterPath="$PROJECT_DIR$/cart.html" />
+      <change beforePath="$PROJECT_DIR$/css/buyer.css" afterPath="$PROJECT_DIR$/css/buyer.css" />
+      <change beforePath="$PROJECT_DIR$/img/m_checked02.png" afterPath="$PROJECT_DIR$/img/checked02.png" />
+      <change beforePath="$PROJECT_DIR$/js/cart.js" afterPath="$PROJECT_DIR$/js/cart.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -100,15 +20,19 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="cart.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cart.html">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="newcar.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/newcar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="63" column="6" lean-forward="true" selection-start-line="63" selection-start-column="6" selection-end-line="63" selection-end-column="6" />
+            <state relative-caret-position="527">
+              <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
               <folding>
-                <element signature="n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#td#2;n#tr#3;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#P#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,10 +41,37 @@
       <file leaf-file-name="cart.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/cart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="1026">
+              <caret line="147" column="30" lean-forward="true" selection-start-line="147" selection-start-column="30" selection-end-line="147" selection-end-column="30" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newcar.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/newcar.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="buyer.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/buyer.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="14304">
+              <caret line="596" column="29" lean-forward="false" selection-start-line="596" selection-start-column="27" selection-end-line="596" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checked02.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/img/checked02.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -130,6 +81,15 @@
     <findStrings>
       <find>createVue</find>
       <find>cart</find>
+      <find>soBut</find>
+      <find>rightSreath</find>
+      <find>checked</find>
+      <find>img</find>
+      <find>01</find>
+      <find>em</find>
+      <find>leftLogo</find>
+      <find>checkboxs</find>
+      <find>规格</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -138,22 +98,31 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/cart.js" />
+        <option value="$PROJECT_DIR$/css/buyer.css" />
         <option value="$PROJECT_DIR$/cart.html" />
+        <option value="$PROJECT_DIR$/css/newcar.css" />
+        <option value="$PROJECT_DIR$/newcar.html" />
+        <option value="$PROJECT_DIR$/js/cart.js" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-112" />
-    <option name="y" value="69" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="457" />
+    <option name="y" value="65" />
     <option name="width" value="1386" />
-    <option name="height" value="788" />
+    <option name="height" value="950" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -170,29 +139,29 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="dtbshopcar" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dtbshopcar" type="462c0819:PsiDirectoryNode" />
+              <item name="dtbcar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dtbcar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="dtbshopcar" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dtbshopcar" type="462c0819:PsiDirectoryNode" />
+              <item name="dtbcar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dtbcar" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="dtbshopcar" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dtbshopcar" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="dtbcar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dtbcar" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -200,7 +169,17 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\dtbcar\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\dtbcar" />
+      <recent name="F:\dtbcar\img" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -228,52 +207,54 @@
       <option name="presentableId" value="Default" />
       <updated>1540382616539</updated>
       <workItem from="1540382618312" duration="5048000" />
+      <workItem from="1540430333533" duration="13185000" />
+      <workItem from="1540450378525" duration="11000000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5048000" />
+    <option name="totallyTimeSpent" value="29233000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-112" y="69" width="1386" height="788" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23961425" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08011869" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24032739" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08011869" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,31 +268,57 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/vue.js">
+    <entry file="file://$PROJECT_DIR$/newcar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-746">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="624">
+          <caret line="26" column="87" lean-forward="false" selection-start-line="26" selection-start-column="82" selection-end-line="26" selection-end-column="87" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#P#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/newcar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="38" column="18" lean-forward="false" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/buyer.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="88" column="43" lean-forward="false" selection-start-line="88" selection-start-column="43" selection-end-line="88" selection-end-column="43" />
+        <state relative-caret-position="14304">
+          <caret line="596" column="29" lean-forward="false" selection-start-line="596" selection-start-column="27" selection-end-line="596" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/checked02.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/cart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="44" column="21" lean-forward="true" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cart.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="432">
           <caret line="63" column="6" lean-forward="true" selection-start-line="63" selection-start-column="6" selection-end-line="63" selection-end-column="6" />
           <folding>
-            <element signature="n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#td#2;n#tr#3;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#tr#1;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#2;n#tr#1;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -320,6 +327,74 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/vue.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-746">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/m_checked01.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/checked02.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/buyer.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14304">
+          <caret line="596" column="29" lean-forward="false" selection-start-line="596" selection-start-column="27" selection-end-line="596" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="73" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="73" />
+          <folding>
+            <element signature="n#tr#1;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#2;n#tr#1;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/newcar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newcar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#P#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/cart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1026">
+          <caret line="147" column="30" lean-forward="true" selection-start-line="147" selection-start-column="30" selection-end-line="147" selection-end-column="30" />
           <folding />
         </state>
       </provider>

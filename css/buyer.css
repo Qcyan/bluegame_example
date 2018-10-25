@@ -1109,7 +1109,7 @@ footer span{
     display: inline-block;
     width: 16px;
     height: 16px;
-    background: #fff url(./img/m_checked02.png) center no-repeat;
+    background: #fff url(../img/checked02.png) center no-repeat;
     background-position: -31px 0px;
     border: 1px solid #d6d7dc;
 }
