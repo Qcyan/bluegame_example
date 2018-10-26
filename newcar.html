@@ -20,8 +20,9 @@
     </div>
     <p style="width: 13%;">全选</p>
   </div>
+  <!--商品店铺-->
   <div class="center">
-    <div class="shopname" v-for="(item,index) in list" :key="index">
+    <div class="shopname" v-for="(item,index) in renderList" :key="index">
       <div style="width: 4%;">
         <input type="checkbox" :id="'check'+index" name="checkboxs"  @click="selshop(item)" v-model="item.sel" />
         <label :for="'check'+index"></label>
@@ -54,6 +55,9 @@
           </div>
           <P>删除</P>
         </li>
+
+
+
       </ul>
     </div>
   </div>
