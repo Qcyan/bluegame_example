@@ -1,3 +1,13 @@
+// 加减数量组件
+var opts = {
+  template: "#goodsListMount",
+  componentName: "goods-list-mount"
+}
+spec(opts)
+
+
+
+
 app = new Vue({
   el: '#app',
   data: {
@@ -16,13 +26,14 @@ app = new Vue({
             maxcount: 30,
             price: '18元',
             id: 222,
+            kc:8,
             Specifi: {
               one: [
                 {id: "3271", value: "大只", sort: "4"},
-                {id: "3272", value: "小只", sort: "6"}
+                {id: "3272", value: "小只", sort: "6",checked:true}
               ],
               two: [
-                {id: "3273", value: "褐色", sort: "4"},
+                {id: "3273", value: "褐色", sort: "4",checked:true},
                 {id: "3274", value: "白色", sort: "6"}
               ]
             }
@@ -34,14 +45,15 @@ app = new Vue({
             maxcount: 30,
             price: '18元',
             id: 223,
+            kc:8,
             Specifi: {
               one: [
-                {id: "3271", value: "大只", sort: "4"},
+                {id: "3271", value: "大只", sort: "4",checked:true},
                 {id: "3272", value: "小只", sort: "6"}
               ],
               two: [
                 {id: "3273", value: "褐色", sort: "4"},
-                {id: "3274", value: "白色", sort: "6"}
+                {id: "3274", value: "白色", sort: "6",checked:true}
               ]
             }
           }
@@ -60,14 +72,15 @@ app = new Vue({
             maxcount: 30,
             price: '18元',
             id: 224,
+            kc:8,
             Specifi: {
               one: [
-                {id: "3271", value: "大只", sort: "4"},
+                {id: "3271", value: "大只", sort: "4",checked:true},
                 {id: "3272", value: "小只", sort: "6"}
               ],
               two: [
                 {id: "3273", value: "褐色", sort: "4"},
-                {id: "3274", value: "白色", sort: "6"}
+                {id: "3274", value: "白色", sort: "6",checked:true}
               ]
             }
           },
@@ -78,13 +91,14 @@ app = new Vue({
             maxcount: 30,
             price: '18元',
             id: 225,
+            kc:8,
             Specifi: {
               one: [
                 {id: "3271", value: "大只", sort: "4"},
-                {id: "3272", value: "小只", sort: "6"}
+                {id: "3272", value: "小只", sort: "6",checked:true}
               ],
               two: [
-                {id: "3273", value: "褐色", sort: "4"},
+                {id: "3273", value: "褐色", sort: "4",checked:true},
                 {id: "3274", value: "白色", sort: "6"}
               ]
             }
@@ -151,6 +165,12 @@ app = new Vue({
           }.bind(this))
       }.bind(this))
     },
+    // 修改数量
+    changeAmount:function (compon) {
+      var goods = compon.goods;
+      goods.count = compon.amount;
+      console.log(this.list)
+    }
   },
   mounted: function () {
     //给与所有勾选状态false
@@ -174,7 +194,7 @@ function deepCopy(obj) {
   }
   return _obj;
 }
-// 所有状态初始化
+// 所有勾选状态初始化
 function selectFn(state) {
   $.each(this.list, function (index, value) {
     if(value.sel){

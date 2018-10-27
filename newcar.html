@@ -10,9 +10,6 @@
   <div class="tag">
     <span v-for="(item,index) in headsel_value" :key="index" @click="headsel(index)">{{item}}</span>
   </div>
-  <!--<div class="tagText"></div>-->
-
-
   <div class="head">
     <div style="width: 4%;">
       <input type="checkbox" id="checkA" @click="selAll($event.currentTarget)" v-model="allSelect"/>
@@ -36,11 +33,14 @@
           </div>
           <P style="width:29%">{{goods.goodsname}}</P>
           <P>{{goods.price}}</P>
-          <div class="adddel">
-            <em>-</em>
-            <input type="number" :value="goods.count"/>
-            <em>+</em>
-          </div>
+          <!--数量组件-->
+          <goods-list-mount
+            :goods="goods"
+            :now-amount="goods.count"
+            :max-amount="parseInt(goods.kc)"
+            @change-amount="changeAmount">
+          </goods-list-mount>
+
           <div class="specification">
             <span>规格:</span>
             <div style="display: inline-block">
@@ -55,17 +55,33 @@
           </div>
           <P>删除</P>
         </li>
-
-
-
       </ul>
     </div>
   </div>
+  <!--规格弹框-->
+  <div style="position: absolute;top: 0;left: 0;">
+
+  </div>
 </div>
 </body>
+<!--数量-->
+<script type="text/template" id="goodsListMount">
+  <div class="adddel">
+    <button type="button" class="amount-btn" @click="minusAmount">-</button>
+    <input type="text" class="amount-input" v-model.number="amount" @click.stop>
+    <button type="button" class="amount-btn" @click="addAmount">+</button>
+  </div>
+</script>
+
+
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="./js/vue.js"></script>
+<script src="./js/mount_size.js"></script>
 <script src="./js/cart.js"></script>
+
+
+
+
 <script>
   (function () {
 
