@@ -2,6 +2,7 @@ app = new Vue({
   el: '#app',
   data: {
     allSelect: false,
+    allSelGoods_State:{},
     renderList: [],
     list: [
       {
@@ -100,12 +101,11 @@ app = new Vue({
   methods: {
     selAll: function (target) {
       this.allSelect = target.checked
-      var _this = this
       $.each(this.list, function (index, value) {
-        $.each(_this.list[index].goods, function (idx, val) {
-          val.sel = _this.allSelect
-        })
-      })
+        $.each(this.list[index].goods, function (idx, val) {
+          val.sel = this.allSelect
+        }.bind(this))
+      }.bind(this))
       this.timer_sel()
     },
     selshop: function (item) {
@@ -122,41 +122,20 @@ app = new Vue({
     timer_sel:function () {
       clearTimeout(this.timer)
       this.timer = setTimeout(function () {
-        this.sel_public()
+        sel_public.call(this)
       }.bind(this),300)
-    },
-    sel_public:function () {
-      this.allSelect = true
-      var selall_state = true
-      $.each(this.list,function (index,value) {
-        var selshop_state = true
-        $.each(value.goods,function (idx,val) {
-          if (val.sel == false) {
-            selshop_state = false
-            value.sel = false
-          }
-          if(selshop_state == true){
-            value.sel = true
-          }
-          if(value.sel == false){
-            this.allSelect  = false
-            selall_state = false
-          }
-          if(selall_state == true){
-            this.allSelect = true
-          }
-        }.bind(this))
-      }.bind(this))
     },
     headsel: function (index) { //tab切换
       this.seltype_num = index;
+      this.allSelect = false
       //所有勾选状态去掉
-      $.each(this.list, function (index, value) {
-        value.sel = false
-        $.each(value.goods, function (idx, val) {
-          val.sel = false
-        })
-      })
+      selectFn.call(this,false)
+
+      if(this.seltype_num == 0){
+        this.renderList = this.list
+        return;
+      }
+
       //深拷贝，始外部的指向不同，但是push进去的指向还是相同的
       this.renderList = deepCopy(this.list);
 
@@ -171,28 +150,17 @@ app = new Vue({
             }
           }.bind(this))
       }.bind(this))
-
-      if(this.seltype_num == 0){
-        this.renderList = this.list
-      }
-
     },
   },
   mounted: function () {
-    var _this = this
-    $.each(this.list, function (index, value) {
-      _this.$set(value, 'sel', false)
-      $.each(value.goods, function (idx, val) {
-        _this.$set(val, 'sel', false)
-      })
-    })
-
-
+    //给与所有勾选状态false
+    selectFn.call(this,false)
     this.renderList = this.list;
   },
 
 })
 
+//深拷贝
 function deepCopy(obj) {
   if (!obj || !(obj instanceof Array) && !(obj.toString() === "[object Object]")) return obj;
   const _obj = obj instanceof Array ? [] : {};
@@ -205,5 +173,53 @@ function deepCopy(obj) {
     }
   }
   return _obj;
+}
+// 所有状态初始化
+function selectFn(state) {
+  $.each(this.list, function (index, value) {
+    if(value.sel){
+      value.sel = state
+    }else{
+      this.$set(value, 'sel', state)
+    }
+    $.each(value.goods, function (idx, val) {
+      if(value.sel){
+        val.sel = state
+      }else{
+        this.$set(val, 'sel', state)
+      }
+    }.bind(this))
+  }.bind(this))
+}
+//单选多选的相同操作
+function sel_public() {
+  this.allSelect = true
+  var selall_state = true
+  $.each(this.renderList,function (index,value) {
+    var selshop_state = true
+    $.each(value.goods,function (idx,val) {
+      if (val.sel == false) {
+        selshop_state = false
+        value.sel = false
+      }
+      if(selshop_state == true){
+        value.sel = true
+      }
+      if(value.sel == false){
+        this.allSelect  = false
+        selall_state = false
+      }
+      if(selall_state == true){
+        this.allSelect = true
+      }
+
+      //获取到所有是选中状态的商品对象
+      if(val.sel == true && !this.allSelGoods_State[val.id]){
+        this.allSelGoods_State[val.id] = true
+      }else if(val.sel == false && this.allSelGoods_State[val.id]){
+        delete(this.allSelGoods_State[val.id]);
+      }
+    }.bind(this))
+  }.bind(this))
 }
 
