@@ -102,56 +102,51 @@ app = new Vue({
       this.allSelect = target.checked
       var _this = this
       $.each(this.list, function (index, value) {
-        console.log(value)
-        value.sel = _this.allSelect
         $.each(_this.list[index].goods, function (idx, val) {
           val.sel = _this.allSelect
         })
       })
+      this.timer_sel()
     },
     selshop: function (item) {
       item.sel = !item.sel
       $.each(item.goods, function (idx, val) {
         val.sel = item.sel
       })
-      this.selshop_public()
-    },
-    selshop_public: function () {
-      // 根据商铺显示判断是否显示总全选
-      var selshop_state = true
-      $.each(this.list, function (index, value) {
-        if (!value.sel) {
-          selshop_state = false
-        }
-      })
-      if (!selshop_state) {
-        this.allSelect = false
-      } else {
-        this.allSelect = true
-      }
+      this.timer_sel()
     },
     selgoods: function (goods, shopIndex) {
       goods.sel = !goods.sel
-
+      this.timer_sel()
+    },
+    timer_sel:function () {
       clearTimeout(this.timer)
       this.timer = setTimeout(function () {
-          this.sel_public()
-      },300)
-      // var selshop_state = true
-      // $.each(this.list[shopIndex].goods, function (idx, val) {
-      //   if (val.sel == false) {
-      //     selshop_state = false
-      //   }
-      // })
-      // if (!selshop_state) {
-      //   this.list[shopIndex].sel = false
-      // } else {
-      //   this.list[shopIndex].sel = true
-      // }
-      // this.selshop_public()
+        this.sel_public()
+      }.bind(this),300)
     },
     sel_public:function () {
-      $.each()
+      this.allSelect = true
+      var selall_state = true
+      $.each(this.list,function (index,value) {
+        var selshop_state = true
+        $.each(value.goods,function (idx,val) {
+          if (val.sel == false) {
+            selshop_state = false
+            value.sel = false
+          }
+          if(selshop_state == true){
+            value.sel = true
+          }
+          if(value.sel == false){
+            this.allSelect  = false
+            selall_state = false
+          }
+          if(selall_state == true){
+            this.allSelect = true
+          }
+        }.bind(this))
+      }.bind(this))
     },
     headsel: function (index) { //tab切换
       this.seltype_num = index;
