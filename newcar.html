@@ -21,15 +21,16 @@
   <div class="center">
     <div class="shopname" v-for="(item,index) in renderList" :key="index">
       <div style="width: 4%;">
-        <input type="checkbox" :id="'check'+index" name="checkboxs"  @click="selshop(item)" v-model="item.sel" />
+        <input type="checkbox" :id="'check'+index" name="checkboxs" @click="selshop(item)" v-model="item.sel"/>
         <label :for="'check'+index"></label>
       </div>
       <p>{{item.shopname}}</p>
       <ul>
         <li class="goodsli" v-for="(goods,idx) in item.goods" :key="idx">
           <div style="width: 4%;">
-            <input type="checkbox" :id=`${item.id}+${idx}` @click="selgoods(goods,index)"  v-model="goods.sel" name="checkgoods" />
-            <label :for=`${item.id}+${idx}` ></label>
+            <input type="checkbox" :id=`${item.id}+${idx}` @click="selgoods(goods,index)" v-model="goods.sel"
+                   name="checkgoods"/>
+            <label :for=`${item.id}+${idx}`></label>
           </div>
           <P style="width:29%">{{goods.goodsname}}</P>
           <P>{{goods.price}}</P>
@@ -41,16 +42,12 @@
             @change-amount="changeAmount">
           </goods-list-mount>
 
-          <div class="specification">
-            <span>规格:</span>
-            <div style="display: inline-block">
-              <div class="btn_spacifi">
-                <span v-for="(Specione,idxOne) in goods.Specifi.one" :key="idxOne">{{Specione.value}}</span>
+          <div class="specification"  style="height:100px;border:1px #f0f0f0 solid;position: relative;">
+            <span style="position: absolute;right: 0;top: 0;" @click="changeSize($event,idx,index,goods)">修改</span>
+            <div style="display: inline-block" class="detailsize">
+              <div v-for="(Specits,idx) in goods.Specifi" :key="idx">
+                <p>{{Specits.value}}：{{Specits.name}}</p>
               </div>
-              <div class="btn_spacifi">
-                <span v-for="(Specitwo,idxTwo) in goods.Specifi.two" :key="idxTwo">{{Specitwo.value}}</span>
-              </div>
-
             </div>
           </div>
           <P>删除</P>
@@ -58,9 +55,19 @@
       </ul>
     </div>
   </div>
-  <!--规格弹框-->
-  <div style="position: absolute;top: 0;left: 0;">
+    <!--规格弹框-->
+  <div id="PopUp" v-show="showPopUp" style="width: 300px;height: 200px;border:1px #f0f0f0 solid;position: absolute;background-color:#fff;">
+    <!--规格组件-->
+    <!--<about-size>-->
 
+    <!--</about-size>-->
+    <div v-for="(it,idx) in allSpec" :key="idx">
+      <p>{{it.value}}</p>
+      <span v-for="(its,idxs) in it.specifi" :key="idxs" @click="clickSize(idx,idxs)" class="onesize" :class="its.checked?'activeSize':''">
+        {{its.name}}
+      </span>
+    </div>
+    <button @click="comfirm">确定</button>
   </div>
 </div>
 </body>
@@ -73,13 +80,19 @@
   </div>
 </script>
 
+<!--规格-->
+<!--<script type="text/template" id="aboutSize">-->
+  <!--<div v-for="(it,idx) in showClick_size" :key="idx">-->
+    <!--<p>{{it.goodsSpec}}</p>-->
+  <!--<span v-for="(its,idxs) in it.spec" :key="idxs">{{its.value}}</span>-->
+  <!--</div>-->
+  <!--<button>确定</button>-->
+<!--</script>-->
 
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="./js/vue.js"></script>
 <script src="./js/mount_size.js"></script>
 <script src="./js/cart.js"></script>
-
-
 
 
 <script>

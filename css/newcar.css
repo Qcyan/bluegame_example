@@ -96,3 +96,15 @@ text-align: center;
   background-color: #e08787;
   color:#fff
 }
+.show{
+  display: block;
+}
+.noShow{
+  display:none
+}
+.onesize{
+  cursor: pointer;
+}
+.activeSize{
+  color:red
+}
