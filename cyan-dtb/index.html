@@ -1,0 +1,343 @@
+<extend name="Public:layout"/>
+
+<block name="nav_header">
+    <!--<?php $header_title = '购物车';?>-->
+    <!--<include file="Public:nav_header"/>-->
+</block>
+
+
+<block name='body'>
+    <link rel="stylesheet" href={:getResStateVersion("__STATIC__/wap/home/css/cart/index.css")}>
+    <style>
+        .t-cc3141 {
+            color: #cc3141
+        }
+
+        .t-cdbba9 {
+            color: #cdbba9
+        }
+
+        .bg-cc3141 {
+            background-color: #cc3141;
+        }
+
+        .mg-0 {
+            margin: 0;
+        }
+
+        [v-cloak] {
+            display: none !important;
+        }
+    </style>
+    <div id="app" class=" pd-b-40" v-cloak>
+        <div class="nav_header pd-10 g-bg-white g-bd-b-e5e reset-all-a">
+            <a class="btn-goBack" href="{$header_url|default='javascript:history.back(-1);'}"></a>
+            <span class="t-c  t-hide">购物车</span>
+            <a href="javascript:;" @click="showRemove_b = !showRemove_b" class="reset-a text-success t-r f-0_8 t-333">
+                <span v-if="showRemove_b == false">管理</span>
+                <span v-else>完成</span>
+            </a>
+        </div>
+        <!--空购物车-->
+        <div class='col-xs-12 pd-lr-10 g-bg-white mg-tb-10 pd-tb-20 g-radius-6 reset-all-a' v-if="list.length<=0 && !loading">
+            <div class=" v-m g-flex" style="width: 75%;margin: 0px auto 0px;">
+                <div><img src='/Static/wap/home/images/cart/nogoods.png' alt='' style="width: 80px;"></div>
+                <div class="mg-l-50 bd-b">
+                    <p class="f-1_1 mg-b-10 t-999" style="margin-top: 0;">购物车空空的哦~</p>
+                    <a href='https://www.dtb315.com/'><span class="bg-cc3141 t-white pd-tb-3 pd-lr-15 f-0_8 t-white" style="border-radius: 15px;">去购物&nbsp; ></span></a>
+                </div>
+            </div>
+        </div>
+        <!--购物车部分-->
+        <div class="row pd-lr-10 center" v-if="list.length>0 && !loading">
+            <!--数据循环-->
+            <div v-for="(item,index) in list" :key="index" class="row reset-all-a  mg-t-10 bd-b g-bg-white bd-b" style="border-radius: 12px;">
+                <!--店铺-->
+                <div class="row h-40 g-flex g-flex-ai-c pd-l-15 ps-r">
+                    <div class="nosel" :class={'noSelshape':!item.shopSel_state}></div>
+                    <div class="ps-r w-10 h-40 " :class={'outshopSel':!item.shopSel_state}>
+                        <input type="checkbox" :id="'checkB'+index" style="top: 12px" @click="selshop(item)" :checked="item.sel"/>
+                        <label :for="'checkB'+index" style="top: 12px" :class={'selinput':item.sel}></label>
+                        </div>
+                    <a :href="'/store.html?store='+item.store_id" class="t-333" style="max-width: 62%;">
+                        <div class="t-hide">{{item.store_name}}</div>
+                    </a>
+
+                    <span class="mg-l-5 g-arrow g-arrow-xsmall g-arrow-r inline-block ps-r" style="top: 1px;"></span>
+
+                    <span v-if="item.imlist" class="ps-a" style="right: 10px;top: 10px">
+                        <a :href="'/web_im/index.html?tomid='+item.imlist.To_Account">
+                             <img v-if="item.imlist.State == 'Offline'" width="20px" height="20px" src='/Static/wap/home/images/cart/chats.png' alt=''>
+                            <img v-else width="20px" height="20px" src='/Static/wap/home/images/cart/chats.png' alt=''>
+                        </a>
+                        <!--<a class="fl-r" :href="'/web_im/html?tomid='+item.imlist.To_Account" :class="item.imlist.State == 'Offline'?'t-e5e':'t-333'">在线客服</a>-->
+                    </span>
+                </div>
+                <!--商品-->
+                <div v-for="(goods,idx) in item.goods" :key="idx" class="goods">
+                    <a :href="'/home/goods/info?which_mall='+goods.which_mall+'&sonid='+goods.sonid" class="t-333">
+                        <div class="g-flex pd-tb-10 pd-r-10 pd-l-15 ps-r" :class="{'outgoods':goods.status != 0}">
+                            <!--<div class="nosel" :class="{'noSelshape':goods.show != 2 || goods.invalid == 1 || goods.kc == 0}" ></div>-->
+                            <span v-if="goods.status == 3" class="ps-a loseGoods">已下架</span>
+                            <span v-if="goods.status == 1" class="ps-a loseGoods">已失效</span>
+                            <span v-if="goods.status == 2" class="ps-a loseGoods">已售罄</span>
+                            <div class="ps-r h-40 w-10 outgoodsSel" @click.prevent="selgoods(goods,index)">
+                                <input type="checkbox" :id="'checkC'+index+idx" style="top: 12px" :checked="goods.sel"/>
+                                <label :for="'checkC'+index+idx" style="top: 12px" :class={'selinput':goods.sel}></label>
+                            </div>
+                            <div class="mg-r-15 ps-r">
+                                <!--which_mall,0无，1普通商城，2碳惠，3德宝，4vip，5点评商城-->
+                                <span v-if='goods.which_mall == 4' class='ps-a mallType t-white pd-lr-5'>VIP</span>
+	                            <img :src=goods.list_img alt='' style="width: 100px;height:100px">
+                            </div>
+                            <div class=" row g-flex g-flex-1  g-flex-d-c">
+                                <div class="g-flex g-flex-1">
+                                    <div class="goodsDetail g-flex-1">
+                                        <p class="t-ellipsis t-ellipsis-2 mg-0" style="min-height: 38px;">{{goods.name}}</p>
+                                        <div class="mg-t-8 f-0_8">
+                                            <span class="zeng inline-block" v-if="goods.goods_activitys">{{goods.goods_activitys}}</span>
+                                        </div>
+                                        <div class="mg-t-10 guige inline-block  pd-tb-3 pd-lr-5 f-0_8" @click.prevent="btnXiugai($event,index,idx,goods)">
+                                            <span v-for="(specs,specIdx) in goods.spec">{{specs.value}}<span v-if="specIdx != goods.spec.length-1">；&nbsp</span></span>
+                                            <span class="mg-l-3 g-arrow g-arrow-xsmall g-arrow-b inline-block ps-r" style="top: -3px;"></span>
+                                        </div>
+                                    </div>
+                                    <div class="action t-c ">
+                                        <p class="mg-l-10 g-radius-16" :class="goods.is_collection==0?'collect':'is_collect'" @click.prevent="collect(goods.goods_id)">收藏</p>
+                                        <p class="del t-cc3141  mg-l-10 g-radius-16" @click.prevent="deleteFn(goods.cm_id,index,idx)">删除</p>
+                                    </div>
+                                </div>
+                                <div class="g-flex g-flex-d-r g-flex-jc-sb   mg-t-8">
+                                    <!--点评商城商品-->
+                                    <div v-if='goods.which_mall == 5'>
+	                                    <span class="t-cc3141 f-1 outgoodsColor">￥{{goods.tb}}</span>
+                                        <div class='t-cc3141'>+{{goods.score}}积分</div>
+                                    </div>
+                                    <div v-else>
+                                        <span class="t-cc3141 f-1 outgoodsColor">￥{{goods.price}}</span>
+                                        <p v-if="goods.spec.length>0 && goods.jiang == 1" class="f-0_8 mg-0 t-a2a2a2" style="text-decoration:line-through">
+                                            ￥{{goods.spec[0].price}}
+                                        </p>
+                                    </div>
+                                    <!--<div>-->
+                                    <!--<button type="button" class="amount-btn" @click="minusAmount" style="margin-right: -1px;">-</button>-->
+                                    <!--<input type="text" class="amount-input" v-model.number="amount" @click.stop>-->
+                                    <!--<button type="button" class="amount-btn" @click="addAmount" style="margin-left: -1px;">+</button>-->
+                                    <!--</div>-->
+                                    <!--数量组件-->
+                                    <div class="ps-r">
+                                        <goods-list-mount
+                                                :goods="goods"
+                                                :now-amount="goods.num"
+                                                :max-amount="parseInt(goods.kc)"
+                                                :is-control-max-amount="goods.isControlMaxAmount"
+                                                @change-amount="changeAmount">
+                                        </goods-list-mount>
+                                        <div class="ps-a" style="top: 0;left: 20px;width: 45px;height: 25px;background-color:transparent;" @click.prevent="mountInput(goods,item.goods,idx)"></div>
+                                        <!--数量-->
+                                        <div v-if="goods.status == 0 " style="width: 77px;">
+                                            <div class="pd-tb-2 bd-b t-c overWarn t-cc3141" v-if="goods.num >= goods.kc ">
+                                                (最多只能购买{{goods.kc}}件)
+                                            </div>
+                                            <div class="pd-tb-2 bd-b t-c overWarn t-cc3141" v-if="goods.num != goods.kc && goods.kc <= 20 && goods.num < goods.kc">
+                                                (库存紧张)
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                
+               
+                <!--店铺活动-->
+                <div  style="margin-left: 10%"  v-if="item.store_activitys">
+                    <!--积分,vip-->
+                    <div v-if='item.is_score_or_vip' class='mg-t-10' style='color: #dcb46e'>
+                        积分商城与vip商城商品不参与店铺活动
+                    </div>
+                    <div class='g-flex h-40 g-flex-ai-c pd-r-10'>
+                        <span class="t-cc3141 pd-lr-5 mg-r-15" style="border: 1px #cc3141 solid;">店铺活动</span>
+                        <div class="g-flex-1 t-ellipsis" style="white-space: nowrap;">
+                        <span v-for="store_activitys in item.store_activitys">
+                            <span v-for="activitys in store_activitys">{{activitys}}&nbsp;&nbsp;</span>
+                        </span>
+                        </div>
+                        <span class="mg-l-3 g-arrow g-arrow-xsmall g-arrow-b inline-block ps-r" @click="shopActive(item.store_activitys)" style="top: -3px;width: 10px;"></span>
+                    </div>
+                </div>
+            </div>
+            <!--购物车底部-->
+            <div class="row g-bg-white ps-f g-flex g-flex-jc-sb cartFoot">
+                <!--<div class="row g-flex g-flex-jc-sb">-->
+                <div class="g-flex g-flex-ai-c left w-20 h-50">
+                    <div class="ps-r w-20 mg-l-15" style="height: 50px">
+                        <input type="checkbox" id="checkD" @click="selAll($event.currentTarget)" v-model="allSelect"/>
+                        <label for="checkD" style="top: 16px" :class={'selinput':allSelect}></label>
+                    </div>
+                    <span class="pd-l-10">全选</span>
+                </div>
+                <div class="t-cc3141 w-50 mg-r-20 g-flex g-flex-d-rr g-flex-ai-c w-80 h-50" v-show="showRemove_b">
+                    <span class="g-radius-16 pd-lr-12" style="border: 1px #cc3141 solid;" @click="batchDel">删除</span>
+                    <span class="mg-r-15" style="color:#d2bfa1" @click="removeAll">
+                            <img src='/Static/wap/home/images/cart/sao.png' class="mg-r-5" alt=''>清空失效商品
+                        </span>
+                </div>
+                <div class="g-flex g-flex-d-rr g-flex-ai-c right w-80 h-50" v-show="!showRemove_b">
+                    <div class="sub account pd-lr-15 f-1_0 t-white mg-l-15" @click="gopay" :class={'accountActive':js_state}>提交</div>
+                    <div>
+                        <span class="t-cc3141 f-1_1">
+                            ￥{{selgoodsPrice.total}}
+                            <span class='f-0_8' v-if='selgoodsPrice.total_score'>+{{selgoodsPrice.total_score}}积分</span>
+                        </span>
+                        <p class="f-0_6 mg-0 f-0_6 t-999">不含运费</p>
+                    </div>
+                    合计：
+                </div>
+                <!--</div>-->
+
+
+            </div>
+        </div>
+        <!--猜你喜欢-->
+        <div class="t-c pd-lr-10" style="line-height: 60px">
+            — 猜你喜欢 —
+        </div>
+        <div class="row pd-lr-10 like reset-all-a">
+            <div class="col-xs-6 mg-b-10" style="font-size: 0" v-for="(item,idx) in hotgoods_list" :key="idx">
+                <a :href="'/home/goods/info?sonid='+item.sonid">
+                    <img :src='item.list_img' class="w-100">
+                    <div class="pd-lr-10 pd-b-10 g-bg-white w-100 bd-b t-333">
+                        <div style="height: 81px">
+                            <p class="mg-0 f-0_9 t-ellipsis t-ellipsis-2" style="height: 44px;line-height: 22px">{{item.name}}</p>
+                            <span class="mg-tb-10 inline-block baoyou pd-lr-4 f-0_8">包邮</span>
+                        </div>
+                        <div style="min-height: 40px">
+                            <p class="mg-0 f-0_9" style="text-decoration:line-through">市场价：￥{{item.sc_price}}</p>
+                            <p class="mg-0 f-1 t-cc3141">优惠价：￥{{item.price}}</p>
+                        </div>
+
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+        <!--规格弹框-->
+        <div class="specBox row ps-f" v-show="showPopUp" @click.stop="cancel_pop">
+            <div id="PopUp" class="row ps-f g-bg-white pd-15" @click.stop="">
+                <div class="g-flex g-flex-ai-e pd-b-15">
+                    <div class="mg-r-15">
+                        <img :src='aboutImg.showSpecImg' alt='' style="width: 80px;height:80px">
+                    </div>
+                    <div v-if='specgoods.goodsInfo'>
+                        <span class="t-cc3141 f-1 mg-b-10 inline-block">
+                             <span v-if="specgoods.goodsInfo.which_mall == 5">
+                                ￥{{specgoods.goodsInfo.tb}} + {{specgoods.goodsInfo.score}}积分
+                             </span>
+                            <span v-else>
+                                 ￥{{specgoods.goodsInfo.price}}
+                             </span>
+                        </span>
+                        <div>
+                            已选：”
+                            <span v-for="(specPop,popIdx) in specgoods.goods">
+                            {{specPop.value}}<span v-if="popIdx != specgoods.goods.length-1">/</span>
+                            </span>
+                            “
+                        </div>
+                    </div>
+                </div>
+                <div class="overflow-hidden mg-b-10 specParam"  v-for="(spec,specIdx) in all_spec_deep" :key="specIdx">
+                    <p class="t-333 mg-b-5">{{spec.spec_name}}</p>
+                    <div class="inline-block overflow-hidden">
+                        <div class="fl-l mg-r-10 mg-b-5 g-bd-e5e f-0_9 t-c ps-r pd-2 v-m" style="min-width:40px;border-radius: 3px"
+                           v-for="(specif,specifIdx) in spec.son" :key="specifIdx"
+                           :class={'specSel':specif.checked,'kong':isNullKcId(specif.id)}
+                           @click.stop="checkSpec(spec,specif)">
+                            <img v-if="specif.img && specif.img.length>0" width="30px" height="30px" :src='specif.img[0]' alt=''>
+                            <span style="max-width: 170px" class="t-hide inline-block">{{specif.value}}</span>
+                            <span v-if="specif.desp" style="max-width: 130px;white-space: nowrap;">({{specif.desp}})</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mg-t-20">
+                    <button class="row g-btn g-btn-danger g-btn-radius" @click.stop="confirmSpec">确定</button>
+                    <img class="ps-a closeimg" @click="cancel_pop" src='/Static/wap/home/images/cart/close.png' alt=''>
+                </div>
+            </div>
+        </div>
+        <!--店铺活动弹框-->
+        <div class="specBox row ps-f" v-show="showActive" @click="showActive = false">
+            <div class="row ps-f  pop g-bg-white pd-15" @click.stop="">
+                <div class="col-xs-6 t-c" v-for="active in allActive">
+                    <p v-for="oneactive in active" :class={'t-cc3141':oneactive.indexOf("包邮")!=-1}>{{oneactive}}</p>
+                </div>
+                <!--<span   class="ps-a">取消</span>-->
+                <img class="ps-a closeimg" @click="showActive = false" src='/Static/wap/home/images/cart/close.png' alt=''>
+            </div>
+        </div>
+        <!--修改数量弹框-->
+        <div class="popBox row ps-f" v-if="showAountPop" @click="closeMount">
+            <div class="row ps-a g-bg-white col-xs-8" style="top: 0;bottom: 0;left: 0;right: 0;margin:auto;height: 190px" @click.stop="">
+                <p class="pd-l-20">修改购买数量</p>
+                <div class="g-flex g-flex-ai-c g-flex-d-c pd-t-10" style="height: 90px">
+                    <goods-list-mount
+                            :goods="inputMsg.inputMsg"
+                            :now-amount="inputMsg.inputMsg.num"
+                            :max-amount="parseInt(inputMsg.inputMsg.kc)"
+                            :is-control-max-amount="inputMsg.inputMsg.isControlMaxAmount"
+                            @change-amount="confirmChangeAmount"
+                    >
+                    </goods-list-mount>
+                    <!--数量-->
+                    <div v-if="inputMsg.inputMsg.status == 0">
+                        <div class="pd-tb-2 bd-b t-c overWarn t-cc3141" v-if="inputMsg.inputMsg.num >= inputMsg.inputMsg.kc ">
+                            (最多只能购买{{inputMsg.inputMsg.kc}}件)
+                        </div>
+                        <div class="pd-tb-2 bd-b t-c overWarn t-cc3141" v-if="inputMsg.inputMsg.num != inputMsg.inputMsg.kc && inputMsg.inputMsg.kc <= 20 && inputMsg.inputMsg.num < inputMsg.inputMsg.kc">
+                            (库存紧张)
+                        </div>
+                    </div>
+                </div>
+                <div class="row t-white pd-5 t-c ">
+                    <p class="w-49 fl-l h-40 g-bg-999 mg-0" style="line-height: 40px;color: #f8fcfb;" @click.stop="closeMount">取消</p>
+                    <p class="w-49 fl-r bg-cc3141 g-bg-org mg-0" style="line-height: 40px" @click.stop="confirmMount">确定</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--数量组件-->
+    <script type="text/template" id="goodsListMount">
+        <div style="height: 25px">
+            <button type="button" class="amount-btn" @click.prevent="minusAmount" style="margin-right: -1px;">-</button>
+            <input type="text" class="amount-input" v-model.number="amount" @click.prevent="">
+            <button type="button" class="amount-btn" @click.prevent="addAmount" style="margin-left: -1px;">+</button>
+        </div>
+    </script>
+
+    <script>
+      (function () {
+        _require.config = {
+          path: [
+            "__STATIC__/pc/home/js/cart/index.js",
+            "__PUBLIC__/spec_controller/vue_spec.js",
+          ]
+        };
+        _require.use(function () {
+          _require('allMsg')({
+            el: '#app'
+          })
+         
+        })
+
+
+      })();
+    </script>
+</block>
+
+<block name="nav_suspend"></block>

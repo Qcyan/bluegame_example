@@ -1,0 +1,278 @@
+<extend name="Public:layout"/>
+
+<block name="body">
+
+    <style>
+        #map {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 54px;
+        }
+    </style>
+
+    <div class="row">
+        <!--<div id="map"></div>-->
+    </div>
+
+    <div class="row" id="app">
+        <div class="row" v-for="item in spec.all_spec">
+            <span class="inline-block pd-10">
+                {{item.spec_name}}
+            </span>
+            <span class="inline-block pd-10"
+                  v-for="_item in item.son"
+                  :class="{'g-bg-e5e':isNullKcId(_item.id),'g-bd-base':_item.checked}"
+                  @click="checkSpec(item,_item)"
+            >
+                {{_item.value}}
+            </span>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.10&key=e58d6c6d3a1bd9e55a1c086527cf1c21"></script>
+    <script type="text/javascript" src="__PUBLIC__/gaode-map/gaode-map.js"></script>
+
+    <script>
+      (function () {
+
+        _require.config = {
+          path: [
+            "__PUBLIC__/gaode-map/gaode-map.js"
+          ]
+        };
+
+        _require.use(function () {
+          //new GaoDeMap();
+        });
+
+
+        var spec = {
+          "all_spec": [{
+            "spec_name": "颜色",
+            "spec_id": "822",
+            "son": [
+              { "id": "1", "value": "灰色", "sort": "0", "spec_id": "822", "checked": true },
+              { "id": "2", "value": "黑色", "sort": "0", "spec_id": "822", }
+            ]
+          }, {
+            "spec_name": "尺码",
+            "spec_id": "823",
+            "son": [
+              { "id": "11", "value": "S", "sort": "0", "spec_id": "823" , "checked": true },
+              { "id": "12", "value": "M", "sort": "0", "spec_id": "823" }
+            ]
+          }, {
+            "spec_name": "样式",
+            "spec_id": "823",
+            "son": [
+              { "id": "111", "value": "style-1", "sort": "0", "spec_id": "823" },
+              { "id": "112", "value": "style-2", "sort": "0", "spec_id": "823" }
+            ]
+          }]
+        };
+
+        var sonidInSpec = {
+          "1,11,111": {
+            "spec_ids": ["1", "11", "111"], "kc": 0
+          },
+          "1,11,112": {
+            "spec_ids": ["1", "11", "112"], "kc": 1
+          },
+          "1,12,111": {
+            "spec_ids": ["1", "12", "111"], "kc": 0
+          },
+          "1,12,112": {
+            "spec_ids": ["1", "12", "112"], "kc": 0
+          },
+          "2,11,111": {
+            "spec_ids": ["2", "11", "111"], "kc": 0
+          },
+          "2,11,112": {
+            "spec_ids": ["2", "11", "112"], "kc": 0
+          },
+          "2,12,111": {
+            "spec_ids": ["2", "12", "111"], "kc": 1
+          },
+          "2,12,112": {
+            "spec_ids": ["2", "12", "112"], "kc": 0
+          }
+        };
+
+        /*function setSkus() {
+          var vmSkuId = 0;
+
+          var allSpec = [];
+
+          var sonidInSpec = {};
+
+          spec.all_spec.forEach(function (sku, index) {
+            allSpec.push(sku.son);
+          });
+
+          var allSpec = getSkus(allSpec, 0);
+
+          allSpec.forEach(function (item, index) {
+
+            var ids = (function () {
+              var ids = [];
+              item.forEach(function (_item) {
+                ids.push(_item.id);
+              });
+              return ids;
+            })();
+
+            sonidInSpec[ids.join()] = {
+              spec: item,
+              spec_ids: ids,
+              kc: (function () {
+                return (index % 2 != 0) ? index : 0;
+              })()
+            };
+          });
+
+          return sonidInSpec;
+        }
+
+        function getSkus(allSpec, index) {
+          var spec = [];
+          var current = allSpec[index] || [];
+          var nextIndex = index + 1;
+          if (nextIndex > allSpec.length - 1) {
+            return current;
+          } else {
+            var next = getSkus(allSpec, nextIndex);
+            current.forEach(function (item) {
+              (next || []).forEach(function (_item) {
+                spec.push([].concat([item], _item));
+              });
+            });
+          }
+          return spec;
+        }
+
+        //模拟多规格数据
+        var sonidInSpec = setSkus();*/
+
+
+        //查找选择项的id组
+        function findIds(opts) {
+          var findGroup = [];
+          var checkedIds = opts.checkedIds;
+          var sonidInSpec = this.sonidInSpec;
+          for (var sonid in sonidInSpec) {
+            if (!sonidInSpec.hasOwnProperty(sonid)) continue;
+            var item = sonidInSpec[sonid];
+            var sonidSpecIds = item.spec_ids;
+            //是否符合当前规格类型
+            var isCurrentSonid = true;
+            //只要缺少一个id，则不属于这个规格类型
+            for (var i = 0; i < checkedIds.length; i++) {
+              if (!checkedIds[i]) continue;
+              if (sonidSpecIds.indexOf(checkedIds[i]) == -1) {
+                isCurrentSonid = false;
+                break;
+              }
+            }
+            //查找到符合的规格
+            if (isCurrentSonid) {
+              findGroup.push(item);
+            }
+          }
+          return findGroup;
+        }
+
+        //获取选中状态的id组
+        function getCheckedIds() {
+          var ids = [];
+          this.spec.all_spec.forEach(function (item, index) {
+            (item.son || []).forEach(function (son) {
+              if (son.checked != true) return;
+              ids[index] = son.id;
+            });
+          });
+          return ids;
+        }
+
+        function getNullGropu(findGroup) {
+          var nullGroup = [];
+          var _this = this;
+          findGroup.forEach(function (item) {
+            var spec = _this.sonidInSpec[item.spec_ids.join()];
+            if (spec && spec.kc <= 0) {
+              nullGroup.push(item);
+            }
+          });
+          return nullGroup;
+        }
+
+        app = new Vue({
+          el: "#app",
+          data: {
+            spec: spec,
+            sonidInSpec: sonidInSpec,
+            nullKcIds: []            //空库存信息
+          },
+          methods: {
+
+            //设置库存为空的
+            setNullKcIds: function () {
+
+              var _this = this;
+
+              var checkedIds = getCheckedIds.call(this);
+
+              //查找符合规格的数据组
+              /*var findGroup = findIds.call(this, {
+                checkedIds: checkedIds
+              });*/
+
+              for (var index = 0; index < this.spec.all_spec.length; index++) {
+                var specType = this.spec.all_spec[index];
+                for (var i = 0; i < (specType.son || []).length; i++) {
+                  var spec = specType.son[i];
+                  var ids = checkedIds.join().split(',');
+                  ids[index] = spec.id;
+                  var findGroup = findIds.call(this, {
+                    checkedIds: ids
+                  });
+                  var nullGroup = getNullGropu.call(this, findGroup);
+                  if (findGroup.length != 0 &&
+                    findGroup.length == nullGroup.length &&
+                    (this.nullKcIds.indexOf(spec.id) == -1)) {
+                    this.nullKcIds.push(spec.id);
+                    if (spec.checked) {
+                      this.nullKcIds = [];
+                      spec.checked = false;
+                      this.setNullKcIds();
+                      return;
+                    }
+                  }
+                }
+              }
+            },
+
+            isNullKcId: function (id) {
+              return this.nullKcIds.indexOf(id) != -1;
+            },
+
+            checkSpec: function (item, spec) {
+              if (this.isNullKcId(spec.id)) return;
+              this.nullKcIds = [];
+              (item.son || []).forEach(function (_spec) {
+                if (spec == _spec) return;
+                this.$set(_spec, 'checked', false);
+              }.bind(this));
+              this.$set(spec, 'checked', !spec.checked);
+              this.setNullKcIds();
+            }
+          },
+          mounted() {
+            this.setNullKcIds();
+          }
+        });
+
+      })();
+    </script>
+</block>
